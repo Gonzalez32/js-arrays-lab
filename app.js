@@ -16,7 +16,7 @@ Exercise 2:
 
 // Complete Exercise 2 below...
 
-
+foods.push('pizza', 'cheeseburger');
 
 console.log('Exercise 2 Result:\n',  foods);
 
@@ -27,7 +27,7 @@ Exercise 3:
 
 // Complete Exercise 3 below...
 
-
+foods.unshift('taco');
 
 console.log('Exercise 3 Result:\n', foods);
 
@@ -38,7 +38,7 @@ Exercise 4:
 
 // Complete Exercise 4 below...
 
-
+const favFood = foods[1]
 
 console.log('Exercise 4 Result:\n', favFood);
 
@@ -49,7 +49,7 @@ Exercise 5:
 
 // Complete Exercise 5 below...
 
-
+foods.splice(2, 0,'tofu');
 
 console.log('Exercise 5 Result:\n', foods);
 
@@ -60,7 +60,7 @@ Exercise 6:
 
 // Complete Exercise 6 below...
 
-
+foods.splice(1,1, 'sushi', 'cupcake')
 
 console.log('Exercise 6 Result:\n', foods);
 
@@ -72,7 +72,7 @@ Exercise 7:
 
 // Complete Exercise 7 below...
 
-
+const yummy = foods.splice(1,2)
 
 console.log('Exercise 7 Result:\n', yummy);
 
@@ -83,7 +83,7 @@ Exercise 8:
 
 // Complete Exercise 8 below...
 
-
+const soyIdx = foods.indexOf('tofu')
 
 console.log('Exercise 8 Result:\n', soyIdx);
 
@@ -95,7 +95,7 @@ Exercise 9:
 
 // Complete Exercise 9 below...
 
-
+const allFoods = foods.join('');
 
 console.log('Exercise 9 Result:\n', allFoods);
 
@@ -106,7 +106,19 @@ Exercise 10:
 
 // Complete Exercise 10 below...
 
+// const hasSoup = 'soup';
 
+// if (foods === hasSoup) {
+//     hasSoup !== true;
+// } else {
+//     hasSoup !== false;
+// }
+
+if (foods.includes('soup')) {
+    const hasSoup = true;
+} else {
+    hasSoup = false;
+}
 
 console.log('Exercise 10 Result:\n', hasSoup);
 
@@ -120,7 +132,13 @@ const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
 
 // Complete Exercise 11 below...
 
+const odds = [];
 
+nums.forEach(function(number) {
+    if (number % 2 === 1) {
+        odds.push(number);
+    }
+}) 
 
 console.log('Exercise 11 Result:\n', odds);
 
@@ -134,7 +152,19 @@ Exercise 12:
 
 // Complete Exercise 12 below...
 
+const fizz = [];
+const buzz = [];
+const fizzbuzz = [];
 
+nums.forEach(function(number) {
+    if (number % 3 === 0 && number % 5 === 0) {
+        fizzbuzz.push(number);
+    } else if (number % 3 === 0) {
+        fizz.push(number);
+    } else if (number % 5 === 0) {
+        buzz.push(number);
+    }
+})
 
 console.log('Exercise 12 Results:');
 console.log('  fizz:', fizz);
@@ -156,7 +186,7 @@ const numArrays = [
 
 // Complete Exercise 13 below...
 
-
+const numList = numArrays[numArrays.length - 1];
 
 console.log('Exercise 13 Result:\n', numList);
 
@@ -167,7 +197,7 @@ Exercise 14:
 
 // Complete Exercise 14 below...
 
-
+const num = numArrays[2][1];
 
 console.log('Exercise 14 Result:\n', num);
 
@@ -179,6 +209,11 @@ Exercise 15:
 
 // Complete Exercise 15 below...
 
-
+let total = 0;
+numArrays.forEach(function(nestedArray) {
+  nestedArray.forEach(function(number) {
+    total += number;
+  })
+})
 
 console.log('Exercise 15 Result:\n', total);
